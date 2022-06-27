@@ -64,7 +64,10 @@ int	cycle(t_params *data, int res)
 	{
 		line = readline("minishell-3.2$ ");
 		if (!line)
+		{
+			ft_putendl_fd("exit", STDOUT_FILENO);
 			exit_minishell(data, g_status);
+		}
 		if (*line)
 		{
 			put_history_line(line, data->minishell->history_fd);
